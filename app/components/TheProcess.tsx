@@ -30,11 +30,11 @@ export default function TheProcess() {
         {/* ==========================================
             RIGHT COLUMN: The Stacking Cards
             ========================================== */}
-        <div className="w-full lg:w-2/3 flex flex-col relative gap-3 p-1">
+        <div className="w-full lg:w-2/3 flex flex-col relative gap-6 p-1">
           {processStepss.map((step, index) => (
             <div
               key={step.id}
-              className="sticky w-full bg-[#121317]"
+              className="sticky w-full bg-[#303030] rounded-[24px] pb-4"
               style={{
                 // 1. Start sticking at 10vh down the screen
                 // 2. Add 96px of space for every previous card so their headers stack beautifully
@@ -64,7 +64,7 @@ export default function TheProcess() {
                   </p>
                   
                   {/* Image Frame Placeholder */}
-                  <div className="relative w-full aspect-[16/10] bg-neutral-800 rounded-xl overflow-hidden shadow-2xl border border-neutral-800/50">
+                  <div className="relative w-full aspect-[16/10] bg-neutral-800 rounded-xl overflow-hidden border border-neutral-800/50">
                     <Image
                       src={step.image}
                       alt={step.title}

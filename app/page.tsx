@@ -2,6 +2,8 @@ import Hero from "./components/Hero";
 import Work from "./components/Work";
 import TheProcess from "./components/TheProcess";
 import Footer from "./components/Footer";
+import Services from "./components/Services";
+import FAQs from "./components/FAQs";
 
 // ==========================================================================
 // REUSABLE ARCHITECTURAL NODE (The 45-degree box)
@@ -88,6 +90,14 @@ export default function Home() {
         <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-[#343539]">
           <TheProcess />
           
+          <div>
+          <Services />
+        </div>
+
+        <div>
+          <FAQs />
+        </div>
+
           <GridNode position="bottom-left" />
           <GridNode position="bottom-right" />
         </div>
