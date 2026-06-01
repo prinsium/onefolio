@@ -131,7 +131,7 @@ export default function Work() {
       const pinTl = gsap.timeline({
         scrollTrigger: {
           trigger: desktopContainerRef.current,
-          start: "top top",
+          start: "top 50vh",
           end: `+=${totalItems * 100}%`,
           pin: true,
           scrub: true,
@@ -181,14 +181,14 @@ export default function Work() {
   }, []);
 
   return (
-    <section className="relative w-full select-none flex justify-center items-center">
+   <section className="relative w-full select-none block">
       
       {/* ==========================================
          DESKTOP INTERFACE (GSAP PINNED - >= md)
          ========================================== */}
       <div 
         ref={desktopContainerRef}
-        className="hidden md:block w-[1400px] h-[90vh] relative overflow-hidden"
+        className="hidden md:block w-full h-[90vh] relative overflow-hidden"
       >
         <div className="relative w-full h-full rounded-sm overflow-hidden bg-neutral-900 border border-neutral-800">
           

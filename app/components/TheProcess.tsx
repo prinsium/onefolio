@@ -8,7 +8,7 @@ import { processStepss } from "@/app/data/processforcircle";
 export default function TheProcess() {
   return (
     <section className="relative w-full text-white py-32 px-6 md:px-12 font-space">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 relative items-start">
+     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 relative">
         
         {/* ==========================================
             LEFT COLUMN: Sticky Title Box
@@ -45,7 +45,7 @@ export default function TheProcess() {
                 minHeight: "70vh", 
               }}
             >
-              <div className="flex flex-col rounded-xl gap-6 md:gap-8 pb-12">
+              <div className="flex flex-col rounded-xl gap-6 md:gap-8">
                 
                 {/* 1. The Header Box (This is the part that remains visible when stacked) */}
                 <div className="bg-black border border-neutral-800 rounded-xl p-6 md:p-8 flex items-center gap-6">

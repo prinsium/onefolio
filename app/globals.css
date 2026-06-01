@@ -15,7 +15,7 @@
 body {
   background-color: var(--color-bg-dark);
   color: #f3f4f6; /* Slate-100 fallback for high-contrast readability */
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ==========================================

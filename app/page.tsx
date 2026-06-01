@@ -6,12 +6,13 @@ import Footer from "./components/Footer";
 // ==========================================================================
 // REUSABLE ARCHITECTURAL NODE (The 45-degree box)
 // ==========================================================================
-const GridNode = ({ position }: { position: "top-left" | "top-right" | "bottom-left" | "bottom-right" }) => {
-  // bg-[#121317] makes the inside match the background. 
-  // Change to bg-white or bg-[#343539] if you want them to be solid filled blocks.
-  const baseClass = "absolute w-2 h-2 bg-[#121317] border border-[#343539] rotate-45 z-20";
+const GridNode = ({ position, theme = "dark" }: { position: "top-left" | "top-right" | "bottom-left" | "bottom-right", theme?: "dark" | "light" }) => {
+  // If we are in the dark section, use dark colors. If in the footer (white bg), use light colors.
+  const bg = theme === "dark" ? "bg-[#121317]" : "bg-white";
+  const border = theme === "dark" ? "border-[#343539]" : "border-zinc-200";
   
-  // These translates ensure the exact absolute center of the diamond sits on the 1px line intersection
+  const baseClass = `absolute w-2 h-2 ${bg} border ${border} rotate-45 z-20`;
+  
   const positions = {
     "top-left": "top-0 left-0 -translate-x-1/2 -translate-y-1/2",
     "top-right": "top-0 right-0 translate-x-1/2 -translate-y-1/2",
@@ -24,40 +25,59 @@ const GridNode = ({ position }: { position: "top-left" | "top-right" | "bottom-l
 
 export default function Home() {
   return (
-    <main className="w-full bg-[#121317] min-h-screen flex flex-col overflow-x-hidden">
+    // CRITICAL FIX: Removed overflow-x-hidden from main to allow sticky and scrolltrigger to work perfectly
+    <main className="w-full bg-[#121317] min-h-screen flex flex-col">
       
       {/* ==========================================
-          1. HERO SECTION (Includes top & bottom border)
+          1. HERO SECTION
           ========================================== */}
       <div className="w-full border-y border-dashed border-[#343539]">
         <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-[#343539]">
-          
-          {/* Top Nodes */}
           <GridNode position="top-left" />
           <GridNode position="top-right" />
           
           <Hero />
           
-          {/* Bottom Nodes */}
           <GridNode position="bottom-left" />
           <GridNode position="bottom-right" />
+        </div>
+      </div>
+
+      {/* ==========================================
+          ARCHITECTURAL SPACER BLOCK
+          ========================================== */}
+      <div className="w-full border-b border-dashed border-[#343539]">
+        <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-[#343539]">
+      
+          <div className="w-full h-24 md:h-32 lg:h-[15vh] min-h-[144px]" />
           
+          <GridNode position="bottom-left" />
+          <GridNode position="bottom-right" />
         </div>
       </div>
 
       {/* ==========================================
           2. WORK SECTION
           ========================================== */}
-      {/* Removed border-t here since Hero already provides the line above it */}
       <div className="w-full border-b border-dashed border-[#343539]">
         <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-[#343539]">
-          
           <Work />
           
-          {/* Bottom Nodes */}
           <GridNode position="bottom-left" />
           <GridNode position="bottom-right" />
+        </div>
+      </div>
 
+      {/* ==========================================
+          ARCHITECTURAL SPACER BLOCK
+          ========================================== */}
+      <div className="w-full border-b border-dashed border-[#343539]">
+        <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-[#343539]">
+      
+          <div className="w-full h-24 md:h-32 lg:h-[12vh] min-h-[100px]" />
+          
+          <GridNode position="bottom-left" />
+          <GridNode position="bottom-right" />
         </div>
       </div>
 
@@ -66,27 +86,35 @@ export default function Home() {
           ========================================== */}
       <div className="w-full border-b border-dashed border-[#343539]">
         <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-[#343539]">
-          
           <TheProcess />
           
-          {/* Bottom Nodes */}
           <GridNode position="bottom-left" />
           <GridNode position="bottom-right" />
-
         </div>
       </div>
 
       {/* ==========================================
-          4. FOOTER SECTION (Full Bleed Background)
+          ARCHITECTURAL SPACER BLOCK
+          ========================================== */}
+      <div className="w-full border-b border-dashed border-[#343539]">
+        <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-[#343539]">
+      
+          <div className="w-full h-24 md:h-32 lg:h-[12vh] min-h-[100px]" />
+          
+          <GridNode position="bottom-left" />
+          <GridNode position="bottom-right" />
+        </div>
+      </div>
+
+      {/* ==========================================
+          4. FOOTER SECTION
           ========================================== */}
       <div className="w-full bg-white"> 
         <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-zinc-200">
           
-          {/* Optional: If you want the nodes to continue into the footer using the footer's theme,
-            you can add them here manually with updated border colors!
-          */}
-          <div className="absolute top-0 left-0 w-2 h-2 bg-[#1e3a8a] border border-white/20 rotate-45 -translate-x-1/2 -translate-y-1/2 z-20" />
-          <div className="absolute top-0 right-0 w-2 h-2 bg-[#1e3a8a] border border-white/20 rotate-45 translate-x-1/2 -translate-y-1/2 z-20" />
+           <div className="absolute top-0 left-0 w-2 h-2 bg-[#121426] rotate-45 -translate-x-1/2 -translate-y-1/2 z-20" />
+          <div className="absolute top-0 right-0 w-2 h-2 bg-[#121426] rotate-45 translate-x-1/2 -translate-y-1/2 z-20" />
+          
 
           <Footer />
           
