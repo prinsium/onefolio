@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Injecting the Google Fonts loaded in layout.tsx */
+  --font-space: "Space Grotesk", sans-serif;
+  --font-jersey: "Jersey 10", sans-serif;
+
+  /* Global Color Overrides/Extensions if needed */
+  --color-bg-dark: #121317;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ==========================================
+   1. BASE RESETS & LAYOUT
+   ========================================== */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg-dark);
+  color: #f3f4f6; /* Slate-100 fallback for high-contrast readability */
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   2. TYPOGRAPHY DESIGN SYSTEM
+   ========================================== */
+
+/* Universal Heading Constraints */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space);
+  font-optical-sizing: auto;
+  line-height: 1.05; 
+  letter-spacing: -0.02em; /* High-end editorial feel */
+  color: #ffffff;
+}
+
+/* Fluid, Semantic Typography Hierarchy */
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem); 
+  font-weight: 700; /* Bold & Intentional */
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-size: clamp(1.65rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h5 {
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* Tracked out for UI labels */
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Body & Paragraph Rules */
+p {
+  font-family: var(--font-geist-sans), sans-serif; /* Fallback to Geist Sans loaded via Next.js layout */
+  font-size: clamp(1rem, 1.1vw, 1.125rem); /* Slightly fluid readable base */
+  line-height: 1.6; /* Generous breathing room for content */
+  color: #9ca3af; /* Gray-400 for structural text hierarchy */
+  max-width: 65ch; /* Keeps line length optimized for reading comfort */
+}
+
+/* Lead/Hero Paragraphs */
+.lead-text {
+  font-size: clamp(1.125rem, 1.5vw, 1.35rem);
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+/* ==========================================
+   3. UTILITY COMPONENTS (Alias Classes)
+   ========================================== */
+.footerTitle {
+  font-family: var(--font-jersey);
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  line-height: 0.75;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
 }

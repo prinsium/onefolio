@@ -22,11 +22,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"></link>
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
