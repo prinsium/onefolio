@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { social } from "../data/socialLinks"; // Adjust your path
+import Image from "next/image";
 
 const navLinks = [
   { title: "About", href: "#about" },
@@ -31,11 +32,11 @@ const Footer = () => {
 
     let animationFrameId: number;
     const dpr = window.devicePixelRatio || 1;
-    
+
     // Grid Setup Parameters
     const dotRadius = 11; // Size of the circles matching your mockup
     const gap = 34;       // Spacing between circles
-    
+
     let cols = 0;
     let rows = 0;
 
@@ -45,7 +46,7 @@ const Footer = () => {
       canvas.height = rect.height * dpr;
       ctx.resetTransform();
       ctx.scale(dpr, dpr);
-      
+
       cols = Math.floor(rect.width / gap);
       rows = Math.floor(rect.height / gap);
     };
@@ -71,13 +72,13 @@ const Footer = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           // Proximity interaction curve logic
-          const maxInfluence = 160; 
+          const maxInfluence = 160;
           let scaleFactor = 1;
 
           if (distance < maxInfluence) {
             // Circles gently shrink or change visual weight when cursor approaches
             const progress = (maxInfluence - distance) / maxInfluence;
-            scaleFactor = 1 - progress * 0.4; 
+            scaleFactor = 1 - progress * 0.4;
           }
 
           ctx.beginPath();
@@ -123,25 +124,34 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer 
+    <footer
       ref={containerRef}
       className="w-full bg-white text-black py-2 flex flex-col justify-between selection:bg-black selection:text-white select-none relative overflow-hidden"
     >
       {/* TOP ROW LAYOUT CONTAINER */}
       <div className="w-full flex flex-col md:flex-row justify-between items-start gap-12 md:gap-6 mb-12 z-10">
-        
+
         {/* Massive Dynamic Identity Text Logo */}
-        <div className="footerTitle w-full md:w-auto text-[28vw] md:text-[11vw] font-black tracking-tighter leading-[0.8] uppercase text-center md:text-left block">
+        {/* <div className="footerTitle w-full md:w-auto text-[28vw] md:text-[11vw] font-black tracking-tighter leading-[0.8] uppercase text-center md:text-left block">
     PRINSIUM
-  </div>
+  </div> */}
+
+        <div className="w-full md:w-auto flex items-center justify-center md:justify-start">
+          <Image
+            src="/PRINSIUM.svg"
+            alt="PRINSIUM Logo"
+            width={1000}
+            height={1000}
+          />
+        </div>
 
         {/* Link Matrix Column Groups */}
-        <div className="flex gap-16 md:gap-24 pl-2 md:pl-0 self-start md:self-auto">
+        <div className="w-full md:w-auto flex gap-0 justify-between md:justify-start md:gap-24 MD pl-2 md:pl-0 self-start md:self-auto">
           {/* Column 1: Core Content Navigation */}
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
-              <Link 
-                key={link.title} 
+              <Link
+                key={link.title}
                 href={link.href}
                 className="text-base font-medium text-zinc-900 hover:text-zinc-500 transition-colors duration-200"
               >
@@ -174,24 +184,24 @@ const Footer = () => {
       </div> */}
 
       <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-zinc-200 py-4 z-10 text-xs font-medium text-zinc-900 tracking-tight flex justify-between items-center">
-          
-          {/* Optional: If you want the nodes to continue into the footer using the footer's theme,
+
+        {/* Optional: If you want the nodes to continue into the footer using the footer's theme,
             you can add them here manually with updated border colors!
           */}
-          <div className="absolute top-0 left-0 w-2 h-2 border border-zinc-200 rotate-45 -translate-x-1/2 -translate-y-1/2 z-20" />
-          <div className="absolute top-0 right-0 w-2 h-2 border border-zinc-200 rotate-45 translate-x-1/2 -translate-y-1/2 z-20" />
-          
+        <div className="absolute top-0 left-0 w-2 h-2 border border-zinc-200 rotate-45 -translate-x-1/2 -translate-y-1/2 z-20" />
+        <div className="absolute top-0 right-0 w-2 h-2 border border-zinc-200 rotate-45 translate-x-1/2 -translate-y-1/2 z-20" />
+
         <span>Copyrights @ PRINSIUM</span>
         <span className="font-mono">2026</span>
 
-           <div className="absolute bottom-0 left-0 w-2 h-2 border border-zinc-200 rotate-45 -translate-x-1/2 -translate-y-1/2 z-20" />
-          <div className="absolute bottom-0 right-0 w-2 h-2 border border-zinc-200 rotate-45 translate-x-1/2 -translate-y-1/2 z-20" />
-        </div>
+        <div className="absolute bottom-0 left-0 w-2 h-2 border border-zinc-200 rotate-45 -translate-x-1/2 -translate-y-1/2 z-20" />
+        <div className="absolute bottom-0 right-0 w-2 h-2 border border-zinc-200 rotate-45 translate-x-1/2 -translate-y-1/2 z-20" />
+      </div>
 
       {/* BOTTOM ROW VISUAL MATRIX GRAPHICS */}
       <div className="w-full h-[320px] mt-4 relative">
-        <canvas 
-          ref={canvasRef} 
+        <canvas
+          ref={canvasRef}
           className="w-full h-full block pointer-events-none"
         />
       </div>
