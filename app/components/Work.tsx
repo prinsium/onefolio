@@ -181,16 +181,16 @@ export default function Work() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#121317] select-none">
+    <section className="relative w-full select-none flex justify-center items-center">
       
       {/* ==========================================
          DESKTOP INTERFACE (GSAP PINNED - >= md)
          ========================================== */}
       <div 
         ref={desktopContainerRef}
-        className="hidden md:block w-full h-screen relative p-16 overflow-hidden"
+        className="hidden md:block w-[1400px] h-[90vh] relative overflow-hidden"
       >
-        <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl bg-neutral-900 border border-neutral-800">
+        <div className="relative w-full h-full rounded-sm overflow-hidden bg-neutral-900 border border-neutral-800">
           
           {works.map((work, index) => (
             <div
@@ -217,7 +217,7 @@ export default function Work() {
           ))}
 
           {/* Floating Thumbnail Carousel Deck */}
-          <div className="absolute right-8 bottom-8 z-50 bg-black/40 backdrop-blur-md p-3 rounded-xl border border-white/10 flex gap-4 items-center shadow-2xl">
+          <div className="absolute right-8 bottom-8 z-50 bg-black/40 backdrop-blur-md p-3 rounded-sm border border-white/10 flex gap-4 items-center shadow-2xl">
             {works.map((work, index) => {
               const isActive = desktopActiveIndex === index;
               return (

@@ -125,7 +125,7 @@ const Footer = () => {
   return (
     <footer 
       ref={containerRef}
-      className="w-full bg-white text-black pt-16 pb-6 px-6 md:px-16 flex flex-col justify-between selection:bg-black selection:text-white select-none relative overflow-hidden"
+      className="w-full bg-white text-black py-2 flex flex-col justify-between selection:bg-black selection:text-white select-none relative overflow-hidden"
     >
       {/* TOP ROW LAYOUT CONTAINER */}
       <div className="w-full flex flex-col md:flex-row justify-between items-start gap-12 md:gap-6 mb-12 z-10">
@@ -168,10 +168,22 @@ const Footer = () => {
       </div>
 
       {/* MID ROW METADATA LINE CONTAINER */}
-      <div className="w-full flex justify-between items-center border-y-2 border-x-0 border-dashed border-zinc-200 py-4 z-10 text-xs font-medium text-zinc-900 tracking-tight">
+      {/* <div className="w-full flex justify-between items-center border-y border-x-0 border-dashed border-zinc-200 py-4 z-10 text-xs font-medium text-zinc-900 tracking-tight">
         <span>Copyrights @ PRINSIUM</span>
         <span className="font-mono">2026</span>
-      </div>
+      </div> */}
+
+      <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-zinc-200">
+          
+          {/* Optional: If you want the nodes to continue into the footer using the footer's theme,
+            you can add them here manually with updated border colors!
+          */}
+          <div className="absolute top-0 left-0 w-2 h-2 bg-[#1e3a8a] border border-zinc-200 rotate-45 -translate-x-1/2 -translate-y-1/2 z-20" />
+          <div className="absolute top-0 right-0 w-2 h-2 bg-[#1e3a8a] border border-zinc-200 rotate-45 translate-x-1/2 -translate-y-1/2 z-20" />
+
+          <Footer />
+          
+        </div>
 
       {/* BOTTOM ROW VISUAL MATRIX GRAPHICS */}
       <div className="w-full h-[320px] mt-4 relative">
