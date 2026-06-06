@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <>
     <PixelCascade />
-    <div className="w-full h-full px-8 py-2 flex flex-col md:flex-row gap-4 md:gap-0 md:justify-between items-baseline-last">
+    <div className="w-full h-full px-8 py-2 pb-30 flex flex-col md:flex-row gap-4 md:gap-0 md:justify-between items-baseline-last">
       <div className="w-full h-full flex flex-col items-start justify-center text-white">
         <h1 className="text-4xl font-bold mb-3">Clarity first. Built to perform.</h1>
         <h3 className="text-zinc-400">

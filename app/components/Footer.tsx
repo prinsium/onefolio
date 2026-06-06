@@ -236,7 +236,7 @@ const Footer = () => {
     <footer className="w-full bg-white text-black py-2 flex flex-col justify-between selection:bg-black selection:text-white select-none relative overflow-hidden h-fit">
       
       {/* TOP ROW LAYOUT CONTAINER */}
-      <div className="w-full flex flex-col md:flex-row justify-between items-start gap-12 md:gap-6 mb-12 z-10">
+      <div className="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-6 mb-12 z-10">
         
         {/* The Isolated GSAP Lottie Component */}
         <div className="w-full md:flex-1 flex items-center justify-center md:justify-start">
