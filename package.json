@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react-native": "^0.9.3",
     "framer-motion": "^12.40.0",
     "gsap": "^3.15.0",
     "next": "16.2.6",

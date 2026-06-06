@@ -89,10 +89,5 @@ p {
    ========================================== */
 .footerTitle {
   font-family: var(--font-jersey);
-  font-weight: 400;
-  font-style: normal;
-  font-optical-sizing: auto;
-  line-height: 0.75;
-  letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
