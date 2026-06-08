@@ -34,7 +34,7 @@ export default function Home() {
           1. HERO SECTION
           ========================================== */}
       <div className="w-full border-y border-dashed border-[#343539]">
-        <div className="relative w-full max-w-[1400px] mx-2 md:mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+        <div className="relative w-auto max-w-[1400px] mx-2 md:mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
           <GridNode position="top-left" />
           <GridNode position="top-right" />
           
@@ -49,7 +49,7 @@ export default function Home() {
           ARCHITECTURAL SPACER BLOCK
           ========================================== */}
       <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-full max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
       
           <div className="w-full h-24 md:h-32 lg:h-[15vh] min-h-[144px]" />
           
@@ -62,7 +62,7 @@ export default function Home() {
           2. WORK SECTION
           ========================================== */}
       <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-full max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
           <Work />
           
           <GridNode position="bottom-left" />
@@ -74,7 +74,7 @@ export default function Home() {
           ARCHITECTURAL SPACER BLOCK
           ========================================== */}
       <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-full max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
       
           <div className="w-full h-24 md:h-32 lg:h-[12vh] min-h-[100px]" />
           
@@ -87,7 +87,7 @@ export default function Home() {
           3. PROCESS SECTION
           ========================================== */}
       <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-full max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
           <TheProcess />
           
           <div>
@@ -107,7 +107,7 @@ export default function Home() {
           ARCHITECTURAL SPACER BLOCK
           ========================================== */}
       <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-full max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
       
           <div className="w-full h-24 md:h-32 lg:h-[12vh] min-h-[100px]" />
           
