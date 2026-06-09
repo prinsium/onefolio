@@ -114,10 +114,10 @@ export default function FAQs() {
               >
                 {/* Question Header */}
                 <div className="p-6 md:p-8 flex justify-between items-center gap-6">
-                  <h4 className={`text-lg md:text-xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-white" : "text-neutral-300"}`}>
+                  <h5 className={`text-lg md:text-xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-white" : "text-neutral-300"}`}>
                     {faq.question}
-                  </h4>
-                  
+                  </h5>
+
                   {/* Plus / Minus Icon */}
                   <div className="shrink-0 relative w-6 h-6 flex items-center justify-center text-neutral-400">
                     <motion.div

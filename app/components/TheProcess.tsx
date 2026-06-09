@@ -49,9 +49,9 @@ export default function TheProcess() {
                 
                 {/* 1. The Header Box (This is the part that remains visible when stacked) */}
                 <div className="bg-black border border-neutral-800 rounded-xl p-6 md:p-8 flex items-center gap-6">
-                  <span className="text-3xl md:text-4xl font-mono text-neutral-500 font-light">
-                    {step.id}
-                  </span>
+                  <h3>
+                    /{step.id}/
+                  </h3>
                   <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white uppercase">
                     {step.title}
                   </h3>

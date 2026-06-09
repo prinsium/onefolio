@@ -217,7 +217,7 @@ export default function Work() {
           ))}
 
           {/* Floating Thumbnail Carousel Deck */}
-          <div className="absolute right-8 bottom-8 z-50 bg-black/40 backdrop-blur-md p-3 rounded-sm border border-white/10 flex gap-4 items-center shadow-2xl">
+          <div className="absolute right-8 bottom-8 z-50 bg-black/40 backdrop-blur-md p-2 rounded-md border border-white/10 flex gap-2 items-center shadow-2xl">
             {works.map((work, index) => {
               const isActive = desktopActiveIndex === index;
               return (
