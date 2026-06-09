@@ -4,6 +4,7 @@ import TheProcess from "./components/TheProcess";
 import Footer from "./components/Footer";
 import Services from "./components/Services";
 import FAQs from "./components/FAQs";
+import Navbar from "./components/Navbar";
 
 // ==========================================================================
 // REUSABLE ARCHITECTURAL NODE (The 45-degree box)
@@ -29,11 +30,11 @@ export default function Home() {
   return (
     // CRITICAL FIX: Removed overflow-x-hidden from main to allow sticky and scrolltrigger to work perfectly
     <main className="w-full bg-[#121317] min-h-screen flex flex-col">
-      
+    
       {/* ==========================================
           1. HERO SECTION
           ========================================== */}
-      <div className="w-full border-y border-dashed border-[#343539]">
+      <div className="w-full border-b border-dashed border-[#343539]">
         <div className="relative w-auto max-w-[1400px] mx-2 md:mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
           <GridNode position="top-left" />
           <GridNode position="top-right" />

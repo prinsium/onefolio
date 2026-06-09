@@ -108,7 +108,7 @@ const PixelCascade = () => {
 
   return (
     // Clean, transparent wrapper layout blocks
-    <div className="w-full h-[50vh] relative bg-transparent overflow-hidden">
+    <div className="w-full h-[65vh] relative bg-transparent overflow-hidden">
       <canvas ref={canvasRef} className="w-full h-full block bg-transparent" />
     </div>
   );
