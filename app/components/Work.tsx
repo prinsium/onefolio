@@ -251,14 +251,14 @@ export default function Work() {
       {/* ==========================================
          MOBILE INTERFACE (FRAMER MOTION - < md)
          ========================================== */}
-      <div className="block md:hidden w-full px-6 py-20">
-        <div className="mb-12">
-          <span className="text-xs uppercase tracking-widest text-neutral-500 font-mono">
-            Selected Creations
-          </span>
+      <div className="block md:hidden w-full px-2 py-6">
+        <div className="mb-6 w-full border-b border-neutral-800">
+          <h6 className="mb-6">
+             Selected Creations
+          </h6>
         </div>
 
-        <div className="w-full border-t border-neutral-800">
+        <div className="w-full">
           {works.map((work, index) => (
             <MobileCard
               key={`mob-${work.id}`}

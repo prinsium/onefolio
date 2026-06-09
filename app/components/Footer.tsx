@@ -264,14 +264,14 @@ const Footer = () => {
       </div>
 
       {/* MID ROW METADATA LINE CONTAINER */}
-      <div className="relative w-full max-w-[1400px] mx-auto border-x border-dashed border-zinc-200 py-4 z-10 text-xs font-medium text-zinc-900 tracking-tight flex justify-between items-center bg-white">
+      <div className="relative w-full max-w-[1400px] mx-auto border-y border-dashed border-zinc-200 py-4 text-xs font-medium text-zinc-900 tracking-tight flex justify-between items-center bg-white">
         <div className="absolute top-0 left-0 w-2 h-2 border border-zinc-200 rotate-45 -translate-x-1/2 -translate-y-1/2 z-20 bg-white" />
         <div className="absolute top-0 right-0 w-2 h-2 border border-zinc-200 rotate-45 translate-x-1/2 -translate-y-1/2 z-20 bg-white" />
-        <span>Copyrights @ PRINSIUM</span>
+          <span>Copyrights @ PRINSIUM</span>
         <span className="font-mono">2026</span>
-        <div className="absolute bottom-0 left-0 w-2 h-2 border border-zinc-200 rotate-45 -translate-x-1/2 -translate-y-1/2 z-20 bg-white" />
-        <div className="absolute bottom-0 right-0 w-2 h-2 border border-zinc-200 rotate-45 translate-x-1/2 -translate-y-1/2 z-20 bg-white" />
-      </div>
+        <div className="absolute bottom-[-6px] left-0 w-2 h-2 border border-zinc-200 rotate-45 -translate-x-1/2 -translate-y-1/3 z-20 bg-white" />
+        <div className="absolute bottom-[-6px] right-0 w-2 h-2 border border-zinc-200 rotate-45 translate-x-1/2 -translate-y-1/2 z-20 bg-white" />
+        </div>
 
       {/* BOTTOM ROW VISUAL MATRIX GRAPHICS */}
       <div className="w-full h-[320px] mt-4 relative z-0">

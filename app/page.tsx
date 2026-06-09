@@ -51,7 +51,7 @@ export default function Home() {
       <div className="w-full border-b border-dashed border-[#343539]">
         <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
       
-          <div className="w-full h-24 md:h-32 lg:h-[15vh] min-h-[144px]" />
+          <div className="w-full h-24 md:h-32 lg:h-[12vh] min-h-[100px]" />
           
           <GridNode position="bottom-left" />
           <GridNode position="bottom-right" />

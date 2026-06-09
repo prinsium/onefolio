@@ -4,15 +4,19 @@ export default function Hero() {
   return (
     <>
     <PixelCascade />
-    <div className="w-full h-full px-8 py-2 pb-30 flex flex-col md:flex-row gap-4 md:gap-0 md:justify-between items-baseline-last">
+    <div className="w-full h-full px-2 md:px-4 lg:px-8 py-2 pb-2 md:pb-4 lg:pb-18 flex flex-col md:flex-row gap-4 md:gap-0 md:justify-between items-baseline-last">
       <div className="w-full h-full flex flex-col items-start justify-center text-white">
         <h1 className="text-4xl font-bold mb-3">Clarity first. Built to perform.</h1>
-        <h3 className="text-zinc-400">
+        <h3 className="hidden md:block text-zinc-400">
           PRINSIUM — independent developer delivering fast, <br /> reliable websites with clarity and precision.
+        </h3>
+
+        <h3 className="md:hidden text-zinc-400">
+          PRINSIUM — independent developer delivering fast, reliable websites with clarity and precision.
         </h3>
       </div>
 
-      <div>
+      <div className="w-full md:w-auto flex items-center justify-end">
         {/* Action Button */}
         <button className="flex items-center bg-[#124be3] border border-[#1d57f0] hover:bg-[#0f3ec2] text-white p-3 rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-[28px] transition-all duration-300 shadow-lg font-medium tracking-wide w-fit group overflow-hidden">
           

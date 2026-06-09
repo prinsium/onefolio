@@ -7,7 +7,7 @@ import Image from "next/image";
 // ==========================================================================
 const DesignCard = () => {
   return (
-    <div className="relative w-[400px] h-[500px] rounded-[24px] bg-[#303030] p-8 flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
+    <div className="relative w-[360px] md:w-[400px] h-[450px] md:h-[400px] lg:h-[450px] rounded-[24px] bg-[#303030] p-8 flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
 
       {/* 
         The Inner Main Block
@@ -54,7 +54,7 @@ const DesignCard = () => {
 // ==========================================================================
 const BuildCard = () => {
   return (
-    <div className="relative w-[400px] h-[500px] rounded-[24px] bg-[#303030] p-8 flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
+    <div className="relative w-[360px] md:w-[400px] h-[450px] md:h-[400px] lg:h-[450px] rounded-[24px] bg-[#303030] p-8 flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
 
       {/* The Inner Main Block */}
       <div className="relative w-full h-[300px] p-4 rounded-[18px] flex items-center justify-center overflow-hidden">
@@ -103,11 +103,11 @@ const BuildCard = () => {
 // ==========================================================================
 const AutomateCard = () => {
   return (
-    <div className="relative w-[400px] h-[500px] rounded-[24px] bg-[#303030] overflow-hidden group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
+    <div className="relative w-[360px] md:w-[400px] h-[450px] md:h-[400px] lg:h-[450px] rounded-[24px] bg-[#303030] overflow-hidden group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
 
       {/* 
         1. Full Card Background Graphic (auto.svg) 
-        Covers the entire 400x500 area.
+        Covers the entire 360x450 area.
       */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <Image
@@ -168,13 +168,13 @@ const AutomateCard = () => {
 // ==========================================================================
 export default function Services() {
   return (
-    <div className="w-full h-full flex flex-col px-6 md:px-12 items-center justify-center gap-12 lg:gap-16">
+    <div className="w-full h-full flex flex-col px-6 md:px-12 items-center justify-center gap-6 md:gap-12 lg:gap-16">
 
       <div className="w-full flex items-center justify-center">
         <h3 className="text-4xl font-bold text-white">Whether you want</h3>
       </div>
 
-      <div className="w-full h-fit flex flex-row flex-wrap items-center justify-center gap-6 lg:gap-8">
+      <div className="w-full h-fit flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-8">
 
         {/* The New Interactive Grid Card */}
         <DesignCard />
