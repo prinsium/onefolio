@@ -147,7 +147,7 @@ const AutomateCard = () => {
 
         {/* Email.svg */}
         <div className="relative w-10 h-10 md:w-12 md:h-12 shrink-0 transition-all duration-500">
-          <Image src="/lottie/Email.svg" alt="Email" fill className="object-contain" />
+          <Image src="/lottie/EMAIL.svg" alt="Email" fill className="object-contain" />
         </div>
 
       </div>
