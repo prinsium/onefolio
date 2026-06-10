@@ -56,7 +56,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"></link>
       </head>
       <body className="min-h-full flex flex-col">
-        <div className="fixed top-0 w-full border-y border-dashed border-[#343539] z-10">
+        <div className="fixed top-0 w-full border-y border-dashed border-[#343539] z-50">
                 <div className="relative w-auto max-w-[1400px] mx-2 md:mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
                   <GridNode position="top-left" />
                   <GridNode position="top-right" />

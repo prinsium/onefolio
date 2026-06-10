@@ -19,10 +19,10 @@
 //         <div className="flex flex-row w-full h-1/2 gap-2 md:gap-3">
 
 //           {/* Block 1 (Expands to 60%) */}
-//           <div className="h-full w-[50%] group-hover:w-[60%] bg-[#3f3f3f] border-2 border-dotted border-[#797878] rounded-xl transition-all duration-500 ease-out" />
+//           <div className="h-full w-[50%] group-hover:w-[60%] bg-[#3f3f3f] rounded-xl transition-all duration-500 ease-out" />
 
 //           {/* Block 2 (Shrinks to 40%) */}
-//           <div className="h-full w-[50%] group-hover:w-[40%] bg-[#3f3f3f] border-2 border-dotted border-[#797878] rounded-xl transition-all duration-500 ease-out" />
+//           <div className="h-full w-[50%] group-hover:w-[40%] bg-[#3f3f3f] rounded-xl transition-all duration-500 ease-out" />
 
 //         </div>
 
@@ -30,10 +30,10 @@
 //         <div className="flex flex-row w-full h-1/2 gap-2 md:gap-3">
 
 //           {/* Block 3 (Shrinks to 40%) */}
-//           <div className="h-full w-[50%] group-hover:w-[40%] bg-[#3f3f3f] border-2 border-dotted border-[#797878] rounded-xl transition-all duration-500 ease-out" />
+//           <div className="h-full w-[50%] group-hover:w-[40%] bg-[#3f3f3f] rounded-xl transition-all duration-500 ease-out" />
 
 //           {/* Block 4 (Expands to 60%) */}
-//           <div className="h-full w-[50%] group-hover:w-[60%] bg-[#3f3f3f] border-2 border-dotted border-[#797878] rounded-xl transition-all duration-500 ease-out" />
+//           <div className="h-full w-[50%] group-hover:w-[60%] bg-[#3f3f3f] rounded-xl transition-all duration-500 ease-out" />
 
 //         </div>
 
@@ -196,27 +196,25 @@ import Image from "next/image";
 // ==========================================================================
 const DesignCard = () => {
   return (
-    // ADDED: flex-1, w-full, aspect-[3/4]
-    <div className="relative flex-1 w-full max-w-[400px] aspect-[3/4] rounded-[24px] bg-[#303030] p-6 md:p-8 flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
+    // REMOVED: flex-1
+    // ADDED: mx-auto (keeps it centered in its grid column)
+    <div className="relative w-full mx-auto max-w-[400px] aspect-[3/4] rounded-[24px] bg-[#303030] flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
 
-      {/* Changed fixed height to flex-1 mb-4 so it fluidly stretches inside the 3:4 box */}
-      <div className="w-full flex-1 mb-4 md:mb-6 p-2 lg:p-4 rounded-[18px] bg-gradient-to-b from-[#363636] to-[#464646] flex flex-col gap-2 md:gap-3">
-
+      <div className="w-full flex-1 rounded-[18px] flex flex-col p-4 gap-2 md:gap-3">
         {/* Top Row: Blocks 1 & 2 */}
         <div className="flex flex-row w-full h-1/2 gap-2 md:gap-3">
-          <div className="h-full w-[50%] group-hover:w-[60%] bg-[#3f3f3f] border-2 border-dotted border-[#797878] rounded-xl transition-all duration-500 ease-out" />
-          <div className="h-full w-[50%] group-hover:w-[40%] bg-[#3f3f3f] border-2 border-dotted border-[#797878] rounded-xl transition-all duration-500 ease-out" />
+          <div className="h-full w-[50%] group-hover:w-[60%] bg-[#3f3f3f] rounded-xl transition-all duration-500 ease-out" />
+          <div className="h-full w-[50%] group-hover:w-[40%] bg-[#3f3f3f] rounded-xl transition-all duration-500 ease-out" />
         </div>
 
         {/* Bottom Row: Blocks 3 & 4 */}
         <div className="flex flex-row w-full h-1/2 gap-2 md:gap-3">
-          <div className="h-full w-[50%] group-hover:w-[40%] bg-[#3f3f3f] border-2 border-dotted border-[#797878] rounded-xl transition-all duration-500 ease-out" />
-          <div className="h-full w-[50%] group-hover:w-[60%] bg-[#3f3f3f] border-2 border-dotted border-[#797878] rounded-xl transition-all duration-500 ease-out" />
+          <div className="h-full w-[50%] group-hover:w-[40%] bg-[#3f3f3f] rounded-xl transition-all duration-500 ease-out" />
+          <div className="h-full w-[50%] group-hover:w-[60%] bg-[#3f3f3f] rounded-xl transition-all duration-500 ease-out" />
         </div>
-
       </div>
 
-      <h4 className="text-3xl font-bold text-white tracking-wide uppercase shrink-0">
+      <h4 className="w-full flex justify-center absolute bottom-4 text-3xl font-bold text-white tracking-wide uppercase shrink-0">
         Design
       </h4>
     </div>
@@ -228,44 +226,29 @@ const DesignCard = () => {
 // ==========================================================================
 const BuildCard = () => {
   return (
-    // ADDED: flex-1, w-full, aspect-[3/4]
-    <div className="relative flex-1 w-full max-w-[400px] aspect-[3/4] rounded-[24px] bg-[#303030] p-6 md:p-8 flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
+    // REMOVED: flex-1
+    // ADDED: mx-auto
+    <div className="relative w-full mx-auto max-w-[400px] aspect-[3/4] rounded-[24px] bg-[#303030] flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
 
-      {/* Changed fixed height to flex-1 mb-4 so it fluidly stretches inside the 3:4 box */}
-      <div className="relative w-full flex-1 mb-4 md:mb-6 p-4 rounded-[18px] flex items-center justify-center overflow-hidden">
-
-        <div className="absolute inset-0 w-full h-full p-8">
-          <Image
-            src="/lottie/gh.svg"
-            alt="GitHub Base"
-            fill
-            className="object-contain"
-          />
+      <div className="relative w-full flex-1 rounded-[18px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 w-full h-full p-2">
+          <Image src="/lottie/gh.svg" alt="GitHub Base" fill className="object-contain" />
         </div>
 
-        <div className="absolute inset-0 w-full h-full p-8 opacity-0 -translate-y-[20px] group-hover:opacity-100 group-hover:-translate-y-[40px] transition-all duration-500 ease-out">
-          <Image
-            src="/lottie/top.svg"
-            alt="Build Top Overlay"
-            fill
-            className="object-contain drop-shadow-2xl"
-          />
+        <div className="absolute p-2 inset-0 w-full h-full opacity-0 -translate-y-[20px] group-hover:opacity-100 group-hover:-translate-y-[40px] transition-all duration-500 ease-out">
+          <Image src="/lottie/top.svg" alt="Build Top Overlay" fill className="object-contain drop-shadow-2xl" />
         </div>
 
-        <div className="absolute inset-0 w-full h-full p-8 opacity-0 -translate-y-[60px] group-hover:opacity-75 group-hover:-translate-y-[80px] transition-all duration-1000 ease-out">
-          <Image
-            src="/lottie/top.svg"
-            alt="Build Top Overlay"
-            fill
-            className="object-contain drop-shadow-2xl"
-          />
+        <div className="absolute p-2 inset-0 w-full h-full opacity-0 -translate-y-[60px] group-hover:opacity-75 group-hover:-translate-y-[80px] transition-all duration-1000 ease-out">
+          <Image src="/lottie/top.svg" alt="Build Top Overlay" fill className="object-contain drop-shadow-2xl" />
         </div>
 
-      </div>
-
-      <h4 className="text-3xl font-bold text-white tracking-wide uppercase shrink-0">
+        <h4 className="absolute bottom-4 text-3xl font-bold text-white tracking-wide uppercase shrink-0">
         Build
       </h4>
+
+
+      </div>
     </div>
   );
 };
@@ -275,23 +258,16 @@ const BuildCard = () => {
 // ==========================================================================
 const AutomateCard = () => {
   return (
-    // 1. Outer wrapper now exactly matches Design and Build (p-6 md:p-8, flex-col)
-    <div className="relative flex-1 w-full max-w-[400px] aspect-[3/4] rounded-[24px] bg-[#303030] p-6 md:p-8 flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300">
+    // REMOVED: flex-1
+    // ADDED: mx-auto
+    <div className="relative w-full mx-auto max-w-[400px] aspect-[3/4] rounded-[24px] bg-[#303030] flex flex-col justify-between group cursor-pointer border border-[#404040] hover:border-neutral-500 transition-colors duration-300 overflow-hidden">
 
-      {/* 2. Inner Main Block exactly matches Design and Build (bg-gradient, rounded-18px) */}
-      <div className="relative w-full flex-1 mb-4 md:mb-6 p-4 rounded-[18px] bg-gradient-to-b from-[#363636] to-[#464646] flex items-center justify-center overflow-hidden">
-
-        {/* Background Graphic (auto.svg) constrained to the inner block! */}
+      <div className="relative w-full flex-1 flex items-center justify-center overflow-hidden">
+        
         <div className="absolute inset-0 w-full h-full pointer-events-none">
-          <Image
-            src="/lottie/auto.svg"
-            alt="Automate Grid Base"
-            fill
-            className="object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-          />
+          <Image src="/lottie/auto.svg" alt="Automate Grid Base" fill className="object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
 
-        {/* The 5 Overlay SVGs */}
         <div className="absolute inset-0 w-full h-full flex flex-row items-center justify-center gap-[10px] md:gap-[12px] group-hover:gap-[16px] transition-all duration-500 ease-out z-10 px-4">
           <div className="relative w-8 h-8 md:w-10 md:h-10 shrink-0 transition-all duration-500">
             <Image src="/lottie/CRAWL.svg" alt="Crawl" fill className="object-contain" />
@@ -310,16 +286,16 @@ const AutomateCard = () => {
           </div>
         </div>
 
-      </div>
-
-      {/* 3. Card title now sits naturally in the flex flow at the bottom */}
-      <h4 className="text-3xl font-bold text-white tracking-wide uppercase shrink-0">
+         <h4 className="absolute bottom-4 text-3xl font-bold text-white tracking-wide uppercase shrink-0">
         Automate
       </h4>
+
+      </div>
 
     </div>
   );
 };
+
 // ==========================================================================
 // MAIN SERVICES COMPONENT
 // ==========================================================================
@@ -331,11 +307,11 @@ export default function Services() {
         <h3 className="text-4xl font-bold text-white text-center">Whether you want</h3>
       </div>
 
-      {/* The Flex Grid 
-        Uses flex-col on mobile, flex-row on desktop.
-        max-w-[1200px] ensures they don't stretch into massive giants on ultrawide monitors.
+      {/* CHANGED TO GRID: 
+          Mobile: 1 column (grid-cols-1)
+          Desktop: 3 equal columns (md:grid-cols-3)
       */}
-      <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-8">
+      <div className="w-full max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         <DesignCard />
         <BuildCard />
         <AutomateCard />
