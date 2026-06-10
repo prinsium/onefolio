@@ -73,16 +73,16 @@ export default function Navbar() {
   };
 
 
-    const filteredSocials = social.filter((item) => visibleSocials.includes(item.title));
+  const filteredSocials = social.filter((item) => visibleSocials.includes(item.title));
 
   return (
     <nav className="w-full max-w-[1400px] h-[60px] bg-[#1a1a1a]/80 backdrop-blur-md border-t border-[#343539] px-4 md:px-8 flex items-center justify-between font-mono select-none">
-      
+
       {/* ==========================================
           LEFT SIDE: Pulsing Block & Timer
           ========================================== */}
       <div className="flex items-center gap-4">
-        
+
         {/* The 1-Second Pulsing Square */}
         <motion.div
           animate={{ backgroundColor: ["#2563eb", "#ffffff", "#2563eb"] }}
@@ -113,16 +113,16 @@ export default function Navbar() {
           aria-label="Contra"
         >
           <svg className="w-5 h-5" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_11_8" style={{maskType: "luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="250" height="250">
-<path d="M250 0H0V250H250V0Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_11_8)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M91.1481 40.8267C78.7875 59.6771 62.6062 75.8018 43.6664 88.1056C30.2916 97.2506 15.6292 104.687 0 110.069V114.384H117.526V-3.20288H113.389C107.975 12.5536 100.449 27.3481 91.1481 40.8267ZM138.871 -3.20288V114.889H256.41V110.573C240.786 105.192 226.133 97.7549 212.744 88.6099C193.823 76.3062 177.627 60.1817 165.267 41.3314C155.867 27.7112 148.274 12.7471 142.846 -3.20288H138.871ZM256.41 135.111H138.871V253.202H142.846C148.274 237.257 155.862 222.289 165.267 208.669C177.627 189.818 193.828 173.694 212.744 161.39C226.133 152.241 240.786 144.807 256.41 139.427V135.111ZM117.53 253.202V135.616H0.00471611V139.931C15.6292 145.312 30.2963 152.749 43.6712 161.894C62.6062 174.198 78.7875 190.328 91.1531 209.173C100.453 222.652 107.98 237.441 113.399 253.198L117.53 253.202Z" fill="#ababab"/>
-</g>
-</svg>
+            <mask id="mask0_11_8" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="0" y="0" width="250" height="250">
+              <path d="M250 0H0V250H250V0Z" fill="white" />
+            </mask>
+            <g mask="url(#mask0_11_8)">
+              <path fillRule="evenodd" clipRule="evenodd" d="M91.1481 40.8267C78.7875 59.6771 62.6062 75.8018 43.6664 88.1056C30.2916 97.2506 15.6292 104.687 0 110.069V114.384H117.526V-3.20288H113.389C107.975 12.5536 100.449 27.3481 91.1481 40.8267ZM138.871 -3.20288V114.889H256.41V110.573C240.786 105.192 226.133 97.7549 212.744 88.6099C193.823 76.3062 177.627 60.1817 165.267 41.3314C155.867 27.7112 148.274 12.7471 142.846 -3.20288H138.871ZM256.41 135.111H138.871V253.202H142.846C148.274 237.257 155.862 222.289 165.267 208.669C177.627 189.818 193.828 173.694 212.744 161.39C226.133 152.241 240.786 144.807 256.41 139.427V135.111ZM117.53 253.202V135.616H0.00471611V139.931C15.6292 145.312 30.2963 152.749 43.6712 161.894C62.6062 174.198 78.7875 190.328 91.1531 209.173C100.453 222.652 107.98 237.441 113.399 253.198L117.53 253.202Z" fill="#ababab" />
+            </g>
+          </svg>
 
         </button>
-        
+
         {/* Dark/Light Mode Toggle */}
         <button
           onClick={toggleTheme}
