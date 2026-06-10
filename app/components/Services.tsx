@@ -311,7 +311,7 @@ export default function Services() {
           Mobile: 1 column (grid-cols-1)
           Desktop: 3 equal columns (md:grid-cols-3)
       */}
-      <div className="w-full max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="w-full max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         <DesignCard />
         <BuildCard />
         <AutomateCard />
