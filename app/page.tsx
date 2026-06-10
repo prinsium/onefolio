@@ -4,8 +4,6 @@ import TheProcess from "./components/TheProcess";
 import Footer from "./components/Footer";
 import Services from "./components/Services";
 import FAQs from "./components/FAQs";
-import Navbar from "./components/Navbar";
-import BinaryAnt from "./components/utils/BinaryAnt";
 
 // ==========================================================================
 // REUSABLE ARCHITECTURAL NODE (The 45-degree box)
