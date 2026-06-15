@@ -292,7 +292,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger);
 
 // ==========================================================================
-// 1. MOBILE CARD SUB-COMPONENT
+// 1. MOBILE CARD SUB-COMPONENT (Framers Motion)
 // ==========================================================================
 const MobileCard = ({
   work,
@@ -308,7 +308,7 @@ const MobileCard = ({
   const cardRef = useRef<HTMLDivElement>(null);
   
   const isInView = useInView(cardRef, {
-    margin: "-40% 0px -40% 0px",
+    margin: "-20% 0px -20% 0px",
     amount: "some",
   });
 
@@ -411,8 +411,8 @@ export default function Work() {
           // Physically lock the inner box to the screen
           pin: pinRef.current,         
           
-          // Start exactly 84px down to clear the 60px Navbar + 24px gap
-          start: "top 84px",
+          // Start exactly 64px down to clear the 44px Navbar + 20px gap
+          start: "top 64px",
           
           end: `+=${totalItems * 100}%`,
           scrub: true,
@@ -469,12 +469,13 @@ export default function Work() {
       <div ref={triggerRef} className="hidden md:block w-full relative">
         
         {/* INNER WRAPPER: GSAP pins this, but because it is inside the trigger, 
-            it won't jump out of its column! h-[80vh] prevents bottom overflow. */}
+            it won't jump out of its column! h-[95vh] prevents bottom overflow. */}
         <div 
           ref={pinRef}
-          className="w-full h-[80vh] relative overflow-hidden rounded-md"
+          className="w-full h-[95vh] relative overflow-hidden rounded-md"
         >
-          <div className="relative w-full h-full rounded-sm overflow-hidden bg-neutral-900 border border-neutral-800">
+          {/* Main Pinned Container: removed padding, kept general styling */}
+          <div className="relative w-full h-full rounded-sm overflow-hidden bg-neutral-900 border border-neutral-800 p-0">
             
             {works.map((work, index) => (
               <div
@@ -482,25 +483,37 @@ export default function Work() {
                 className="desktop-work-slide absolute inset-0 w-full h-full"
                 style={{ zIndex: index + 1 }}
               >
+                {/* Maintain GSAP structure and selector names */}
                 {index !== 0 && (
                   <div className="shutter-sweep-line absolute top-0 bottom-0 w-[4px] bg-blue-600 z-20 will-change-transform" />
                 )}
 
                 <div className="shutter-clip-frame absolute inset-0 w-full h-full overflow-hidden z-10 will-change-transform">
-                  <div className="inner-image-content absolute inset-0 w-full h-full will-change-transform">
-                    <Image
-                      src={work.pic}
-                      alt={work.title}
-                      fill
-                      priority={index === 0}
-                      className="object-cover object-top"
-                    />
+                  {/*
+                    Modified .inner-image-content to be a flex container.
+                    This will center its child (the new image container).
+                  */}
+                  <div className="inner-image-content absolute inset-0 w-full h-full will-change-transform flex items-center justify-center">
+                    
+                    {/*
+                      New Image Container: fulfills "inside a container with noise background".
+                      Replicates the container details from image_0.png, but is centered on the whole screen.
+                    */}
+                    <div className="relative aspect-[14/10] w-[80%] max-w-[1100px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] [background-image:url('https://res.cloudinary.com/dzf8e4e7p/image/upload/v1721183389/f6-pantry/pattern_vshvxz.png')] bg-blend-multiply transition-all duration-300 ease-out hover:scale-[1.005]">
+                      <Image
+                        src={work.pic}
+                        alt={work.title}
+                        fill
+                        priority={index === 0}
+                        className="object-cover object-top p-1"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
 
-            {/* Floating Thumbnail Carousel Deck */}
+            {/* Floating Thumbnail Carousel Deck - NOT TOUCHED */}
             <div className="absolute right-8 bottom-8 z-50 bg-black/40 backdrop-blur-md p-2 rounded-md border border-white/10 flex gap-2 items-center shadow-2xl">
               {works.map((work, index) => {
                 const isActive = desktopActiveIndex === index;
