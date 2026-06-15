@@ -475,7 +475,7 @@ export default function Work() {
           className="w-full h-[95vh] relative overflow-hidden rounded-md"
         >
           {/* Main Pinned Container: removed padding, kept general styling */}
-          <div className="relative w-full h-full rounded-sm overflow-hidden bg-neutral-900 border border-neutral-800 p-0">
+          <div className="relative w-full h-full rounded-sm overflow-hidden bg-neutral-900 border border-neutral-800 p-2">
             
             {works.map((work, index) => (
               <div
