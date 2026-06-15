@@ -3,6 +3,7 @@
 @theme {
   /* Injecting the Google Fonts loaded in layout.tsx */
   --font-space: "Space Grotesk", sans-serif;
+  --font-bricolage: "Bricolage Grotesque", sans-serif;
   --font-jersey: "Jersey 10", sans-serif;
 
   /* Global Color Overrides/Extensions if needed */

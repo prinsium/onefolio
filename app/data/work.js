@@ -30,7 +30,7 @@ export const works = [
   {
     id: "05",
     title: "aksh Foundation",
-    pic: "/work/klight.png",
+    pic: "/work/akshfoundation.png",
     tags: ["UI/UX", "Web Design"],
   }
 ]
