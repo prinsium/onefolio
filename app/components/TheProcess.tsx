@@ -113,7 +113,7 @@ export default function TheProcess() {
         </div>
 
         {/* RIGHT COLUMN: The Stacking Cards */}
-        <div className="w-full lg:w-2/3 flex flex-col relative gap-6">
+        <div className="w-full lg:w-2/3 flex flex-col relative gap-2 md:gap-6">
           {processStepss.map((step, index) => (
             <div
               key={step.id}
@@ -121,7 +121,7 @@ export default function TheProcess() {
               style={{
                 top: `calc(10vh + ${index * 96}px)`,
                 zIndex: index + 1,
-                minHeight: "70vh", 
+                minHeight: "30vh", 
               }}
             >
               <div className="flex flex-col rounded-xl gap-6 md:gap-8">
@@ -143,7 +143,7 @@ export default function TheProcess() {
                   </p>
                   
                   {/* REPLACED: Image is gone, ProcessVisuals takes its place */}
-                  <div className="relative w-full h-[60vh] bg-neutral-950 rounded-xl overflow-hidden border border-neutral-800/50">
+                  <div className="relative w-full aspect-square md:aspect-[16/10] bg-neutral-950 rounded-xl overflow-hidden border border-neutral-800/50">
                     <ProcessVisuals type={step.gridType} />
                   </div>
                 </div>

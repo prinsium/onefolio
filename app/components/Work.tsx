@@ -499,13 +499,13 @@ export default function Work() {
                       New Image Container: fulfills "inside a container with noise background".
                       Replicates the container details from image_0.png, but is centered on the whole screen.
                     */}
-                    <div className="relative aspect-[14/10] w-[80%] max-w-[1100px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] [background-image:url('https://res.cloudinary.com/dzf8e4e7p/image/upload/v1721183389/f6-pantry/pattern_vshvxz.png')] bg-blend-multiply transition-all duration-300 ease-out hover:scale-[1.005]">
+                    <div className="relative aspect-[14/10] w-[80%] max-w-[1100px] overflow-hidden bg-gray-800 rounded-xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] [background-image:url('https://res.cloudinary.com/dzf8e4e7p/image/upload/v1721183389/f6-pantry/pattern_vshvxz.png')] bg-blend-multiply transition-all duration-300 ease-out hover:scale-[1.005]">
                       <Image
                         src={work.pic}
                         alt={work.title}
                         fill
                         priority={index === 0}
-                        className="object-cover object-top p-1"
+                        className="object-cover object-top rounded-xl aspect-[14/10]"
                       />
                     </div>
                   </div>

@@ -57,19 +57,19 @@ const ServiceCard = ({ children, title }: ServiceCardProps) => {
 
 const DesignIcon = () => (
     <div className="w-[85%] aspect-square flex items-center justify-center rounded-full bg-[#303030] border-2 border-dashed border-gray-500">
-        <Image src="/lottie/design.svg" alt="Design icon" width={60} height={60} className="object-contain" />
+        <Image src="/lottie/design.svg" alt="Design icon" width={60} height={60} className="object-contain scale-75 md:scale-100" />
     </div>
 );
 
 const BuildIcon = () => (
     <div className="w-[85%] aspect-square flex items-center justify-center rounded-full bg-[#303030] border-2 border-dashed border-gray-500">
-        <Image src="/lottie/build.svg" alt="Build code icon" width={60} height={60} className="object-contain" />
+        <Image src="/lottie/build.svg" alt="Build code icon" width={60} height={60} className="object-contain scale-75 md:scale-100" />
     </div>
 );
 
 const AutomationIcon = () => (
     <div className="w-[85%] aspect-square flex items-center justify-center rounded-full bg-[#303030] border-2 border-dashed border-gray-500">
-        <Image src="/lottie/automate.svg" alt="Automation node icon" width={60} height={60} className="object-contain" />
+        <Image src="/lottie/automate.svg" alt="Automation node icon" width={60} height={60} className="object-contain scale-75 md:scale-100" />
     </div>
 );
 
