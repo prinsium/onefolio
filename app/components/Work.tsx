@@ -353,7 +353,7 @@ const MobileCard = ({
             style={{ overflow: "hidden", willChange: "height, opacity" }}
           >
             <div className="pt-4 space-y-4 w-full pb-2">
-              <div className="relative w-full aspect-[4/3] bg-white rounded-lg overflow-hidden shadow-lg border border-neutral-200/10">
+              <div className="relative w-full aspect-[14/10] bg-[#3d3d3d] rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src={work.pic}
                   alt={work.title}

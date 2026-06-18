@@ -78,6 +78,22 @@ p {
   max-width: 65ch; /* Keeps line length optimized for reading comfort */
 }
 
+.serviceTitle {
+  font-family: var(--font-bricolage);
+  font-optical-sizing: auto;
+  line-height: 1.05; 
+  letter-spacing: -0.02em; /* High-end editorial feel */
+  color: #ffffff;
+}
+
+.li {
+  font-family: var(--font-bricolage);
+  font-optical-sizing: auto;
+  line-height: 1.05; 
+  letter-spacing: -0.02em; /* High-end editorial feel */
+  color: #ffffff;
+}
+
 /* Lead/Hero Paragraphs */
 .lead-text {
   font-size: clamp(1.125rem, 1.5vw, 1.35rem);

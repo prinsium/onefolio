@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Services from "./components/Services";
 import FAQs from "./components/FAQs";
 import Services2 from "./components/Services2";
+import Services3 from "./components/Services3";
 
 // ==========================================================================
 // REUSABLE ARCHITECTURAL NODE (The 45-degree box)
@@ -92,7 +93,7 @@ export default function Home() {
           <TheProcess />
           
           <div>
-          <Services2 />
+          <Services3 />
         </div>
 
         <div>
