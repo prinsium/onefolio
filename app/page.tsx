@@ -1,21 +1,15 @@
 import Hero from "./components/Hero";
 import Work from "./components/Work";
 import TheProcess from "./components/TheProcess";
-import Footer from "./components/Footer";
-import Services from "./components/Services";
 import FAQs from "./components/FAQs";
-import Services2 from "./components/Services2";
 import Services3 from "./components/Services3";
 
 // ==========================================================================
 // REUSABLE ARCHITECTURAL NODE (The 45-degree box)
 // ==========================================================================
-const GridNode = ({ position, theme = "dark" }: { position: "top-left" | "top-right" | "bottom-left" | "bottom-right", theme?: "dark" | "light" }) => {
-  // If we are in the dark section, use dark colors. If in the footer (white bg), use light colors.
-  const bg = theme === "dark" ? "bg-[#121317]" : "bg-white";
-  const border = theme === "dark" ? "border-[#343539]" : "border-zinc-200";
-  
-  const baseClass = `absolute w-2 h-2 ${bg} border ${border} rotate-45 z-20`;
+const GridNode = ({ position }: { position: "top-left" | "top-right" | "bottom-left" | "bottom-right" }) => {
+  // Using dynamic CSS variables to respect light/dark mode naturally
+  const baseClass = `absolute w-2 h-2 bg-primary border border-line rotate-45 z-20 transition-colors duration-300`;
   
   const positions = {
     "top-left": "top-0 left-0 -translate-x-1/2 -translate-y-1/2",
@@ -29,14 +23,16 @@ const GridNode = ({ position, theme = "dark" }: { position: "top-left" | "top-ri
 
 export default function Home() {
   return (
-    // CRITICAL FIX: Removed overflow-x-hidden from main to allow sticky and scrolltrigger to work perfectly
-    <main className="w-full bg-[#121317] min-h-screen flex flex-col">
+    // Changed bg-[#121317] to bg-primary
+    <main>
     
-      {/* ==========================================
+      <div className="landingPage w-full bg-primary min-h-screen flex flex-col transition-colors duration-300">
+
+        {/* ==========================================
           1. HERO SECTION
           ========================================== */}
-      <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-auto max-w-[1400px] mx-2 md:mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+      <div className="w-full border-b border-dashed border-line transition-colors duration-300">
+        <div className="relative w-auto max-w-[1400px] mx-2 md:mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-line transition-colors duration-300">
           <GridNode position="top-left" />
           <GridNode position="top-right" />
           
@@ -50,8 +46,8 @@ export default function Home() {
       {/* ==========================================
           ARCHITECTURAL SPACER BLOCK
           ========================================== */}
-      <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+      <div className="w-full border-b border-dashed border-line transition-colors duration-300">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-line transition-colors duration-300">
       
           <div className="w-full h-24 md:h-32 lg:h-[12vh] min-h-[100px]" />
           
@@ -63,8 +59,8 @@ export default function Home() {
       {/* ==========================================
           2. WORK SECTION
           ========================================== */}
-      <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+      <div className="w-full border-b border-dashed border-line transition-colors duration-300">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-line transition-colors duration-300">
           <Work />
           
           <GridNode position="bottom-left" />
@@ -75,8 +71,8 @@ export default function Home() {
       {/* ==========================================
           ARCHITECTURAL SPACER BLOCK
           ========================================== */}
-      <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+      <div className="w-full border-b border-dashed border-line transition-colors duration-300">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-line transition-colors duration-300">
       
           <div className="w-full h-24 md:h-32 lg:h-[12vh] min-h-[100px]" />
           
@@ -88,17 +84,17 @@ export default function Home() {
       {/* ==========================================
           3. PROCESS SECTION
           ========================================== */}
-      <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+      <div className="w-full border-b border-dashed border-line transition-colors duration-300">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-line transition-colors duration-300">
           <TheProcess />
           
           <div>
-          <Services3 />
-        </div>
+            <Services3 />
+          </div>
 
-        <div>
-          <FAQs />
-        </div>
+          <div>
+            <FAQs />
+          </div>
 
           <GridNode position="bottom-left" />
           <GridNode position="bottom-right" />
@@ -108,8 +104,8 @@ export default function Home() {
       {/* ==========================================
           ARCHITECTURAL SPACER BLOCK
           ========================================== */}
-      <div className="w-full border-b border-dashed border-[#343539]">
-        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#343539]">
+      <div className="w-full border-b border-dashed border-line transition-colors duration-300">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-line transition-colors duration-300">
       
           <div className="w-full h-24 md:h-32 lg:h-[12vh] min-h-[100px]" />
           
@@ -118,19 +114,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ==========================================
-          4. FOOTER SECTION
-          ========================================== */}
-      <div className="w-full bg-white"> 
-        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-zinc-200">
-          
-           <div className="absolute top-0 left-0 w-2 h-2 bg-[#121426] rotate-45 -translate-x-1/2 -translate-y-1/2 z-20" />
-          <div className="absolute top-0 right-0 w-2 h-2 bg-[#121426] rotate-45 translate-x-1/2 -translate-y-1/2 z-20" />
-          
-
-          <Footer />
-          
-        </div>
       </div>
 
     </main>

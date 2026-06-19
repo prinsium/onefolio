@@ -1,41 +1,107 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Injecting the Google Fonts loaded in layout.tsx */
+  /* Fonts */
   --font-space: "Space Grotesk", sans-serif;
   --font-bricolage: "Bricolage Grotesque", sans-serif;
   --font-jersey: "Jersey 10", sans-serif;
 
-  /* Global Color Overrides/Extensions if needed */
-  --color-bg-dark: #252525;
+  /* Map standard CSS variables to Tailwind classes */
+  /* This allows you to use classes like 'bg-primary', 'text-muted', 'border-line' */
+  --color-primary: var(--bg-primary);
+  --color-surface: var(--bg-surface);
+  --color-surface-hover: var(--bg-surface-hover);
+  --color-line: var(--border-line);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-brand: var(--brand-blue);
+  --color-brand-hover: var(--brand-hover);
 }
 
 /* ==========================================
-   1. BASE RESETS & LAYOUT
+   1. COLOR SCHEMES (Light & Dark)
    ========================================== */
-body {
-  background-color: var(--color-bg-dark);
-  color: #f3f4f6; /* Slate-100 fallback for high-contrast readability */
+
+/* LIGHT MODE (Default) */
+:root {
+  --bg-primary: #FBFBFC;
+  /* Very light gray/white */
+  --bg-surface: #ffffff;
+  --bg-card: #1a1a1a;
+  /* Pure white for cards */
+  --bg-surface-hover: #f3f4f6;
+  --border-line: #E4E4E7;
+  /* Light gray dashed borders */
+  --text-main: #181818;
+  /* Near black for readability */
+  --text-muted: #6b7280;
+  --bg-footer: #1447d7;
+  --text-footer: #ffffff;
+  --brand-blue: #124be3;
+  /* Your existing blue */
+  --brand-hover: #0f3ec2;
+}
+
+/* DARK MODE */
+.dark {
+  --bg-primary: #121317;
+  /* Your existing dark background */
+  --bg-surface: #303030;
+  /* Your card background */
+  --bg-card: #1a1a1a;
+  /* Your dark card background */
+  --bg-surface-hover: #383838;
+  --border-line: #343539;
+  /* Your dark dashed borders */
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;
+  --bg-footer: #ffffff;
+  --text-footer: #124be3;
+  --brand-blue: #124be3;
+  --brand-hover: #0f3ec2;
+}
+
+/* ==========================================
+   2. BASE RESETS & LAYOUT
+   ========================================== */
+/* body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: clip;
+} */
+
+.landingPage {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: clip;
 }
 
 /* ==========================================
-   2. TYPOGRAPHY DESIGN SYSTEM
+   3. TYPOGRAPHY DESIGN SYSTEM
    ========================================== */
-
-/* Universal Heading Constraints */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-space);
-  font-optical-sizing: auto;
-  line-height: 1.05; 
-  letter-spacing: -0.02em; /* High-end editorial feel */
-  color: #ffffff;
+h1 {
+font-family: var(--font-bricolage);
+color: var(--text-main);
 }
 
-/* Fluid, Semantic Typography Hierarchy */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-space);
+  font-optical-sizing: auto;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
 h1 {
-  font-size: clamp(2.5rem, 6vw, 5.5rem); 
-  font-weight: 700; /* Bold & Intentional */
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 700;
 }
 
 h2 {
@@ -59,7 +125,7 @@ h5 {
   font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em; /* Tracked out for UI labels */
+  letter-spacing: 0.05em;
 }
 
 h6 {
@@ -69,42 +135,45 @@ h6 {
   letter-spacing: 0.1em;
 }
 
-/* Body & Paragraph Rules */
 p {
-  font-family: var(--font-geist-sans), sans-serif; /* Fallback to Geist Sans loaded via Next.js layout */
-  font-size: clamp(1rem, 1.1vw, 1.125rem); /* Slightly fluid readable base */
-  line-height: 1.6; /* Generous breathing room for content */
-  color: #9ca3af; /* Gray-400 for structural text hierarchy */
-  max-width: 65ch; /* Keeps line length optimized for reading comfort */
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 65ch;
 }
 
-.serviceTitle {
-  font-family: var(--font-bricolage);
-  font-optical-sizing: auto;
-  line-height: 1.05; 
-  letter-spacing: -0.02em; /* High-end editorial feel */
-  color: #ffffff;
-}
-
+.serviceTitle,
 .li {
   font-family: var(--font-bricolage);
   font-optical-sizing: auto;
-  line-height: 1.05; 
-  letter-spacing: -0.02em; /* High-end editorial feel */
-  color: #ffffff;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
 }
 
-/* Lead/Hero Paragraphs */
 .lead-text {
   font-size: clamp(1.125rem, 1.5vw, 1.35rem);
   line-height: 1.5;
-  color: #d1d5db;
+  color: var(--text-muted);
 }
 
-/* ==========================================
-   3. UTILITY COMPONENTS (Alias Classes)
-   ========================================== */
 .footerTitle {
+  color: var(--text-footer);
   font-family: var(--font-jersey);
   text-transform: uppercase;
+}
+
+footer {
+  background-color: var(--bg-footer);
+  width: 100%;
+}
+
+.outFooter {
+  background-color: var(--bg-footer);
+}
+
+.footer>Link,
+a {
+  color: var(--bg-primary);
 }

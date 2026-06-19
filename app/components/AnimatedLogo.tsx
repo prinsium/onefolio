@@ -1,48 +1,3 @@
-// "use client";
-
-// import React, { useEffect, useRef, useState } from "react";
-// import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// export default function AnimatedLogo() {
-//   const containerRef = useRef<HTMLDivElement>(null);
-//   const [dotLottie, setDotLottie] = useState<any>(null);
-
-//   useEffect(() => {
-//     if (!dotLottie || !containerRef.current) return;
-
-//     gsap.registerPlugin(ScrollTrigger);
-
-//     const ctx = gsap.context(() => {
-//       ScrollTrigger.create({
-//         trigger: containerRef.current,
-//         start: "top bottom", 
-//         end: "bottom bottom", 
-//         scrub: 4, // 4-second heavy friction delay for a beautiful, slow draw
-//         onUpdate: (self) => {
-//           if (dotLottie && dotLottie.totalFrames > 0) {
-//             const frame = self.progress * dotLottie.totalFrames;
-//             dotLottie.setFrame(frame);
-//           }
-//         },
-//       });
-//     });
-
-//     return () => ctx.revert();
-//   }, [dotLottie]);
-
-//   return (
-//     <div ref={containerRef} className="w-full h-fit flex items-center justify-center md:justify-start">
-//       <DotLottieReact
-//         src="/lottie/f0.lottie"
-//         dotLottieRefCallback={setDotLottie}
-//         className="w-full h-auto pointer-events-none"
-//       />
-//     </div>
-//   );
-// }
-
 "use client";
 
 import React, { useEffect, useRef } from "react";
@@ -99,7 +54,7 @@ export default function AnimatedLogo() {
           <span
             key={index}
             // 3. 13cqi means "13% of the container's width". It scales infinitely up and down!
-            className="prinsium-letter inline-block text-[33cqi] text-[#1c4ed8] font-black leading-[0.75] tracking-[-0.08em]"
+            className="footerTitle inline-block text-[33cqi] leading-[0.75] tracking-[-0.08em]"
             style={{
               fontFamily: "'Jersey 10', 'Jersey', sans-serif",
               letterSpacing: "0rem",

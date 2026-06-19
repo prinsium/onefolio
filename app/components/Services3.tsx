@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-
 // ==========================================================================
 // TYPESCRIPT INTERFACES
 // ==========================================================================
@@ -17,19 +16,19 @@ interface ServiceCardProps {
 // ==========================================================================
 const ServiceCard = ({ title, iconPath, bullets }: ServiceCardProps) => {
   return (
-    <div className="relative w-full mx-auto max-w-[400px] aspect-[3/4] rounded-[32px] bg-[#2a2a2a] overflow-hidden flex flex-col p-6 md:p-8 group cursor-pointer border border-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl">
+    <div className="relative w-full mx-auto max-w-[400px] aspect-[3/4] rounded-[32px] bg-surface overflow-hidden flex flex-col p-6 md:p-8 group cursor-pointer border border-white/10 hover:border-white/20 transition-all duration-500 shadow-md hover:shadow-lg">
       
       {/* 1. NOISE OVERLAY */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-25 mix-blend-multiply"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
+        // style={{
+        //   backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        // }}
       ></div>
 
       {/* 2. CIRCULAR BLUR GLOW (Figma Layer Blur Equivalent) */}
       {/* Anchored bottom-center. Scales slightly and brightens on hover. */}
-      <div className="absolute -bottom-[10%] left-[90%] -translate-x-1/2 w-[250px] aspect-square rounded-full bg-[#456dff] z-0 pointer-events-none blur-[120px] opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"></div>
+      <div className="absolute -top-[5%] right-[10%] -translate-x-1/3 -translate-y-1/3 w-[600px] aspect-square rounded-full bg-[#456dff] z-0 pointer-events-none blur-[80px] opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"></div>
 
       {/* =========================================
           TOP SECTION: Icon & Bullets (z-10)
@@ -51,7 +50,7 @@ const ServiceCard = ({ title, iconPath, bullets }: ServiceCardProps) => {
         {/* Bullet Points */}
         <ul className="flex flex-col gap-3 pl-2">
           {bullets.map((bullet, index) => (
-            <li key={index} className="flex items-center gap-4 text-gray-200 text-lg md:text-[19px] tracking-wide font-light">
+            <li key={index} className="flex items-center gap-4 text-text-muted text-lg md:text-[19px] tracking-wide font-light">
               <span className="w-1.5 h-1.5 rounded-sm bg-white/80 block shrink-0"></span>
               {bullet}
             </li>

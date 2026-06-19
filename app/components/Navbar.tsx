@@ -1,30 +1,26 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-
-
 import Link from "next/link";
-import { social } from "../data/socialLinks";
+import { useTheme } from "next-themes";
+import { social } from "../data/socialLinks"; 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const visibleSocials = ["Contra"];
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [time, setTime] = useState("");
-  const [isDark, setIsDark] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  
+  // Pulling in the hook from next-themes
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
-  // ==========================================================================
-  // 1. LIVE TIMER & HYDRATION FIX
-  // ==========================================================================
   useEffect(() => {
-    setMounted(true); // Prevents Next.js hydration errors
+    setMounted(true);
 
     const updateClock = () => {
       const now = new Date();
-      // Enforcing IST for your exact local time
       const timeString = now.toLocaleTimeString("en-IN", {
         timeZone: "Asia/Kolkata",
         hour: "2-digit",
@@ -35,15 +31,12 @@ export default function Navbar() {
       setTime(timeString);
     };
 
-    updateClock(); // Set immediately
-    const intervalId = setInterval(updateClock, 1000); // Update every second
+    updateClock();
+    const intervalId = setInterval(updateClock, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
 
-  // ==========================================================================
-  // 2. FULLSCREEN TOGGLE API
-  // ==========================================================================
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch((err) => {
@@ -58,109 +51,73 @@ export default function Navbar() {
     }
   };
 
-  // ==========================================================================
-  // 3. THEME TOGGLE (Vanilla Setup)
-  // ==========================================================================
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    // If you are using next-themes, you would call setTheme('light'/'dark') here.
-    // For pure Tailwind, we toggle the class on the HTML root:
-    if (isDark) {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
-  };
-
-
   const filteredSocials = social.filter((item) => visibleSocials.includes(item.title));
 
   return (
-    <nav className="w-full max-w-[1400px] h-[60px] bg-[#1a1a1a]/80 backdrop-blur-md border-t border-[#343539] px-4 md:px-8 flex items-center justify-between font-mono select-none">
-
-      {/* ==========================================
-          LEFT SIDE: Pulsing Block & Timer
-          ========================================== */}
+    <nav className="w-full max-w-[1400px] h-[60px] bg-surface/80 backdrop-blur-md px-4 md:px-8 flex items-center justify-between font-mono select-none transition-colors duration-300">
+      
+      {/* LEFT SIDE: Pulsing Block & Timer */}
       <div className="flex items-center gap-4">
-
-        {/* The 1-Second Pulsing Square */}
         <motion.div
-          animate={{ backgroundColor: ["#2563eb", "#ffffff", "#2563eb"] }}
+          animate={{ backgroundColor: ["#124be3", "#ffffff", "#124be3"] }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-3.5 h-3.5 rounded-[2px] shadow-[0_0_8px_rgba(37,99,235,0.5)]"
+          className="w-3.5 h-3.5 rounded-[2px] shadow-md"
         />
-
-        {/* The Live Clock */}
-        <div className="flex items-baseline gap-2">
-          <span className="text-xs md:text-sm font-bold tracking-widest text-neutral-400 uppercase">
+        <div className="flex text-main uppercase items-baseline gap-2">
+          <span className="text-xs md:text-sm font-bold tracking-widest">
             Local Time
           </span>
-          {/* We only render the time AFTER mounting to prevent Next.js server errors */}
-          <span className="text-sm md:text-base font-medium text-white tracking-tight w-fit">
+          <span className="text-sm md:text-base font-medium tracking-tight w-fit">
             {mounted ? time : "--:--:-- --"}
           </span>
         </div>
       </div>
 
-      {/* ==========================================
-          RIGHT SIDE: Utility Toggles
-          ========================================== */}
+      {/* RIGHT SIDE: Utility Toggles */}
       <div className="flex items-center gap-2 md:gap-4">
-
-        {/* Contra */}
-        <button
-          className="p-2 transition-colors duration-200 rounded-md text-neutral-400 hover:text-white hover:bg-white/5"
-          aria-label="Contra"
-        >
+        {/* Contra Icon */}
+        <button className="p-2 transition-colors duration-200 rounded-md text-muted hover:text-main hover:bg-surface-hover" aria-label="Contra">
           <svg className="w-5 h-5" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_11_8" style={{ maskType: "luminance" }} maskUnits="userSpaceOnUse" x="0" y="0" width="250" height="250">
               <path d="M250 0H0V250H250V0Z" fill="white" />
             </mask>
             <g mask="url(#mask0_11_8)">
-              <path fillRule="evenodd" clipRule="evenodd" d="M91.1481 40.8267C78.7875 59.6771 62.6062 75.8018 43.6664 88.1056C30.2916 97.2506 15.6292 104.687 0 110.069V114.384H117.526V-3.20288H113.389C107.975 12.5536 100.449 27.3481 91.1481 40.8267ZM138.871 -3.20288V114.889H256.41V110.573C240.786 105.192 226.133 97.7549 212.744 88.6099C193.823 76.3062 177.627 60.1817 165.267 41.3314C155.867 27.7112 148.274 12.7471 142.846 -3.20288H138.871ZM256.41 135.111H138.871V253.202H142.846C148.274 237.257 155.862 222.289 165.267 208.669C177.627 189.818 193.828 173.694 212.744 161.39C226.133 152.241 240.786 144.807 256.41 139.427V135.111ZM117.53 253.202V135.616H0.00471611V139.931C15.6292 145.312 30.2963 152.749 43.6712 161.894C62.6062 174.198 78.7875 190.328 91.1531 209.173C100.453 222.652 107.98 237.441 113.399 253.198L117.53 253.202Z" fill="#ababab" />
+              <path fillRule="evenodd" clipRule="evenodd" d="M91.1481 40.8267C78.7875 59.6771 62.6062 75.8018 43.6664 88.1056C30.2916 97.2506 15.6292 104.687 0 110.069V114.384H117.526V-3.20288H113.389C107.975 12.5536 100.449 27.3481 91.1481 40.8267ZM138.871 -3.20288V114.889H256.41V110.573C240.786 105.192 226.133 97.7549 212.744 88.6099C193.823 76.3062 177.627 60.1817 165.267 41.3314C155.867 27.7112 148.274 12.7471 142.846 -3.20288H138.871ZM256.41 135.111H138.871V253.202H142.846C148.274 237.257 155.862 222.289 165.267 208.669C177.627 189.818 193.828 173.694 212.744 161.39C226.133 152.241 240.786 144.807 256.41 139.427V135.111ZM117.53 253.202V135.616H0.00471611V139.931C15.6292 145.312 30.2963 152.749 43.6712 161.894C62.6062 174.198 78.7875 190.328 91.1531 209.173C100.453 222.652 107.98 237.441 113.399 253.198L117.53 253.202Z" fill="currentColor" />
             </g>
           </svg>
-
         </button>
 
-        {/* Dark/Light Mode Toggle */}
-        {/* <button
-          onClick={toggleTheme}
-          className="p-2 text-neutral-400 hover:text-white transition-colors duration-200 rounded-md hover:bg-white/5"
-          aria-label="Toggle Theme"
-        >
-          {isDark ? (
-            // Sun Icon (Switch to Light)
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-            </svg>
-          ) : (
-            // Moon Icon (Switch to Dark)
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-            </svg>
-          )}
-        </button> */}
+        {/* Theme Toggle - Hidden until hydration completes */}
+        {mounted && (
+          <button 
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} 
+            className="p-2 text-muted hover:text-main transition-colors duration-200 rounded-md hover:bg-surface-hover" 
+            aria-label="Toggle Theme"
+          >
+            {resolvedTheme === "dark" ? (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              </svg>
+            )}
+          </button>
+        )}
 
         {/* Fullscreen Toggle */}
-        <button
-          onClick={toggleFullscreen}
-          className="p-2 text-neutral-400 hover:text-white transition-colors duration-200 rounded-md hover:bg-white/5"
-          aria-label="Toggle Fullscreen"
-        >
+        <button onClick={toggleFullscreen} className="p-2 text-muted hover:text-main transition-colors duration-200 rounded-md hover:bg-surface-hover" aria-label="Toggle Fullscreen">
           {isFullscreen ? (
-            // Minimize Icon
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25" />
             </svg>
           ) : (
-            // Maximize Icon
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0 5.25 5.25M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0 5.25-5.25M20.25 3.75h-4.5m4.5 0v4.5m0-4.5-5.25 5.25M20.25 20.25h-4.5m4.5 0v-4.5m0 4.5-5.25-5.25" />
             </svg>
           )}
         </button>
-
       </div>
     </nav>
   );

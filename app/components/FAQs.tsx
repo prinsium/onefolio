@@ -15,7 +15,7 @@ export default function FAQs() {
   };
 
   return (
-    <section className="relative w-full text-white py-32 px-6 md:px-12 font-space">
+    <section className="relative w-full text-main py-32 px-6 md:px-12 font-space">
       
       {/* CRITICAL: No 'items-start' here! 
         This allows the left column to stretch to the exact height of the right column, 
@@ -32,7 +32,7 @@ export default function FAQs() {
           <div className="sticky top-[12vh] z-10 w-full">
             
             {/* The Card Body */}
-            <div className="bg-[#303030] rounded-tl-[52px] rounded-tr-xl rounded-bl-xl rounded-br-[32px] flex flex-col justify-between overflow-hidden shadow-2xl border border-neutral-700/50">
+            <div className="bg-surface rounded-tl-[52px] rounded-tr-xl rounded-bl-xl rounded-br-[32px] flex flex-col justify-between overflow-hidden shadow-lg border border-line">
               
               <div className="p-4 pb-20">
                 {/* Gray Placeholder Circle */}
@@ -45,7 +45,7 @@ export default function FAQs() {
               {/* Blue Contact Button Block */}
               <div>
         {/* Action Button */}
-        <button className="flex items-center bg-[#124be3] border border-[#1d57f0] hover:bg-[#0f3ec2] text-white p-3 rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-[28px] transition-all duration-300 shadow-lg font-medium tracking-wide w-full group overflow-hidden">
+        <button className="flex items-center bg-brand hover:bg-brand-hover text-white border border-[#1d57f0] text-main p-3 rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-[28px] transition-all duration-300 shadow-lg font-medium tracking-wide w-full group overflow-hidden">
           
           {/* Smooth Left SVG Wrapper */}
           <div className="transition-all duration-300 ease-in-out max-w-[50px] opacity-100 scale-100 mr-4 group-hover:max-w-0 group-hover:opacity-0 group-hover:scale-50 group-hover:mr-0 overflow-hidden">
@@ -110,16 +110,16 @@ export default function FAQs() {
               <div
                 key={faq.id}
                 onClick={() => toggleFaq(faq.id)}
-                className="bg-[#303030] border border-neutral-700/50 rounded-xl overflow-hidden cursor-pointer transition-colors duration-300 hover:bg-[#383838]"
+                className="bg-surface border border-line rounded-xl overflow-hidden cursor-pointer transition-colors duration-300"
               >
                 {/* Question Header */}
                 <div className="p-6 md:p-8 flex justify-between items-center gap-6">
-                  <h5 className={`text-lg md:text-xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-white" : "text-neutral-300"}`}>
+                  <h5 className={`text-lg md:text-xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? "text-main" : "text-muted"}`}>
                     {faq.question}
                   </h5>
 
                   {/* Plus / Minus Icon */}
-                  <div className="shrink-0 relative w-6 h-6 flex items-center justify-center text-neutral-400">
+                  <div className="shrink-0 relative w-6 h-6 flex items-center justify-center text-muted">
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0, opacity: isOpen ? 0 : 1 }}
                       transition={{ duration: 0.3 }}
@@ -150,7 +150,7 @@ export default function FAQs() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ type: "spring", duration: 0.5, bounce: 0 }}
                     >
-                      <div className="px-6 md:px-8 pb-8 text-neutral-400 text-base md:text-lg leading-relaxed">
+                      <div className="px-6 md:px-8 pb-8 text-muted text-base md:text-lg leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>
