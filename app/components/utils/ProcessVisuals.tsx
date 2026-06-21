@@ -43,7 +43,7 @@ const DecodeVisual = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full aspect-auto bg-card rounded-xl overflow-hidden flex items-center justify-center"
+      className="relative w-full h-full aspect-auto bg-card-process rounded-xl overflow-hidden flex items-center justify-center"
     >
       <div className="relative w-3/5 aspect-square max-w-[200px]">
         <div
@@ -137,7 +137,7 @@ const ArchitectVisual = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full aspect-auto bg-card rounded-xl overflow-hidden flex items-center justify-center"
+      className="relative w-full h-full aspect-auto bg-card-process rounded-xl overflow-hidden flex items-center justify-center"
       onMouseMove={handleMouseMove}
     >
       <div className="relative z-0 flex items-center justify-center p-8 bg-transparent">
@@ -220,7 +220,7 @@ const OptimizeVisual = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full aspect-auto bg-card flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full h-full aspect-auto bg-card-process flex flex-col items-center justify-center overflow-hidden"
     >
       <div className="relative w-3/5 aspect-square max-w-[200px] flex items-center justify-center">
         
@@ -282,7 +282,7 @@ const EvolveVisual = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full aspect-auto bg-card rounded-xl overflow-hidden flex items-center justify-center"
+      className="relative w-full h-full aspect-auto bg-card-process rounded-xl overflow-hidden flex items-center justify-center"
     >
       <div className="relative w-3/5 aspect-square max-w-[200px]">
         <div className="evolve-blip-square absolute w-10 h-10 bg-blue-600 z-10" style={{ top: "10%", left: "42%" }} />
@@ -316,6 +316,6 @@ export default function ProcessVisuals({ type }: ProcessVisualsProps) {
     case "evolve":
       return <EvolveVisual />;
     default:
-      return <div className="bg-neutral-900 w-full h-full flex items-center justify-center text-xs text-white opacity-50 aspect-[16/10]">Visualizing...</div>;
+      return <div className="w-full h-full flex items-center justify-center text-xs text-white opacity-50 aspect-[16/10]">Visualizing...</div>;
   }
 }

@@ -29,11 +29,12 @@
   /* Very light gray/white */
   --bg-surface: #ffffff;
   --bg-card: #1a1a1a;
+  --bg-card-process: #313131;
   /* Pure white for cards */
   --bg-surface-hover: #f3f4f6;
   --border-line: #E4E4E7;
   /* Light gray dashed borders */
-  --text-main: #181818;
+  --text-main: #1C232E;
   /* Near black for readability */
   --text-muted: #6b7280;
   --bg-footer: #1447d7;
@@ -50,13 +51,14 @@
   --bg-surface: #303030;
   /* Your card background */
   --bg-card: #1a1a1a;
+  --bg-card-process: #c1c1c1;
   /* Your dark card background */
   --bg-surface-hover: #383838;
   --border-line: #343539;
   /* Your dark dashed borders */
-  --text-main: #ffffff;
+  --text-main: #e1e1e1;
   --text-muted: #9ca3af;
-  --bg-footer: #ffffff;
+  --bg-footer: #1447d7;
   --text-footer: #124be3;
   --brand-blue: #124be3;
   --brand-hover: #0f3ec2;
@@ -159,7 +161,7 @@ p {
 }
 
 .footerTitle {
-  color: var(--text-footer);
+  color: #FBFBFC;
   font-family: var(--font-jersey);
   text-transform: uppercase;
 }
@@ -175,5 +177,5 @@ footer {
 
 .footer>Link,
 a {
-  color: var(--bg-primary);
+  color: #FBFBFC;
 }

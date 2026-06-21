@@ -17,18 +17,6 @@ interface ServiceCardProps {
 const ServiceCard = ({ title, iconPath, bullets }: ServiceCardProps) => {
   return (
     <div className="relative w-full mx-auto max-w-[400px] aspect-[3/4] rounded-[32px] bg-surface overflow-hidden flex flex-col p-6 md:p-8 group cursor-pointer border border-white/10 hover:border-white/20 transition-all duration-500 shadow-md hover:shadow-lg">
-      
-      {/* 1. NOISE OVERLAY */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none opacity-25 mix-blend-multiply"
-        // style={{
-        //   backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        // }}
-      ></div>
-
-      {/* 2. CIRCULAR BLUR GLOW (Figma Layer Blur Equivalent) */}
-      {/* Anchored bottom-center. Scales slightly and brightens on hover. */}
-      <div className="absolute -top-[5%] right-[10%] -translate-x-1/3 -translate-y-1/3 w-[600px] aspect-square rounded-full bg-[#456dff] z-0 pointer-events-none blur-[80px] opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"></div>
 
       {/* =========================================
           TOP SECTION: Icon & Bullets (z-10)
@@ -36,7 +24,7 @@ const ServiceCard = ({ title, iconPath, bullets }: ServiceCardProps) => {
       <div className="relative z-10 flex flex-col flex-1">
         
         {/* Circular Icon Container */}
-        <div className="w-[100px] h-[100px] rounded-full bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center mb-8 shadow-[inset_0_2px_10px_rgba(255,255,255,0.1)] backdrop-blur-sm transition-transform duration-500 group-hover:-translate-y-1">
+        <div className="w-[100px] h-[100px] shadow-xl rounded-full bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center mb-8 shadow-[inset_0_2px_10px_rgba(255,255,255,0.1)] backdrop-blur-sm transition-transform duration-500 group-hover:-translate-y-1">
           <div className="relative w-[36px] h-[36px]">
             <Image 
               src={iconPath} 
@@ -51,7 +39,7 @@ const ServiceCard = ({ title, iconPath, bullets }: ServiceCardProps) => {
         <ul className="flex flex-col gap-3 pl-2">
           {bullets.map((bullet, index) => (
             <li key={index} className="flex items-center gap-4 text-text-muted text-lg md:text-[19px] tracking-wide font-light">
-              <span className="w-1.5 h-1.5 rounded-sm bg-white/80 block shrink-0"></span>
+              <span className="w-1.5 h-1.5 rounded-sm bg-gray-400 dark:bg-white/20 block shrink-0"></span>
               {bullet}
             </li>
           ))}
@@ -63,7 +51,7 @@ const ServiceCard = ({ title, iconPath, bullets }: ServiceCardProps) => {
           BOTTOM SECTION: Title Button (z-10)
       ========================================= */}
       <div className="relative z-10 w-full mt-auto">
-        <div className="w-full py-4 md:py-5 rounded-[20px] bg-white/5 border border-white/20 backdrop-blur-md flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.2)] group-hover:bg-white/10 transition-colors duration-300">
+        <div className="w-full py-4 md:py-5 rounded-[20px] bg-white/5 shadow-xl backdrop-blur-md flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.2)] group-hover:bg-white/10 transition-colors duration-300">
           <span className="serviceTitle text-2xl md:text-[28px] tracking-wide">
             {title}
           </span>

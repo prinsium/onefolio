@@ -47,7 +47,7 @@ export default function RootLayout({
        <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Jersey+10&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Jersey+10&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"></link>
      </head>
       <body className="w-full min-h-full flex flex-col text-main transition-colors duration-300">
         
@@ -70,7 +70,7 @@ export default function RootLayout({
 
 
           <div className="outFooter w-full transition-colors duration-300"> 
-        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-line transition-colors duration-300">
+        <div className="relative w-auto max-w-[1400px] mx-2 sm:mx-3 md:mx-4 lg:mx-auto border-x border-dashed border-[#FBFBFC] transition-colors duration-300">
           
           <div className="absolute top-0 left-0 w-2 h-2 bg-primary border border-line rotate-45 -translate-x-1/2 -translate-y-1/2 z-20 transition-colors duration-300" />
           <div className="absolute top-0 right-0 w-2 h-2 bg-primary border border-line rotate-45 translate-x-1/2 -translate-y-1/2 z-20 transition-colors duration-300" />

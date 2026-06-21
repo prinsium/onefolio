@@ -61,13 +61,13 @@ export default function Navbar() {
         <motion.div
           animate={{ backgroundColor: ["#124be3", "#ffffff", "#124be3"] }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-3.5 h-3.5 rounded-[2px] shadow-md"
+          className="w-3.5 h-3.5 rounded-[2px] shadow-sm"
         />
         <div className="flex text-main uppercase items-baseline gap-2">
-          <span className="text-xs md:text-sm font-bold tracking-widest">
+          <span className="hidden md:block text-xs md:text-sm font-bold">
             Local Time
           </span>
-          <span className="text-sm md:text-base font-medium tracking-tight w-fit">
+          <span className="text-sm md:text-base font-medium w-fit">
             {mounted ? time : "--:--:-- --"}
           </span>
         </div>

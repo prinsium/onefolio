@@ -56,7 +56,7 @@ export default function TheProcess() {
                   </p>
                   
                   {/* REPLACED: Image is gone, ProcessVisuals takes its place */}
-                  <div className="relative w-full aspect-square md:aspect-[16/10] bg-card rounded-xl overflow-hidden">
+                  <div className="relative w-full bg-card-process aspect-square md:aspect-[16/10] rounded-xl overflow-hidden">
                     <ProcessVisuals type={step.gridType} />
                   </div>
                 </div>
